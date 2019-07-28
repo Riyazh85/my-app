@@ -1,0 +1,141 @@
+<div class="row">
+	<div class="col-md-12">
+                    <div id="accordion" class="checkout">
+                        <div class="panel checkout-step">
+                            <div> <span class="checkout-step-number">1</span>
+                                <h4 class="checkout-step-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" > Source</a></h4>
+                            </div>
+                            <div id="collapseOne" class="collapse in">
+                                <div class="checkout-step-body">
+                                    <p>Select the source</p>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="checkout-login">
+                                                <form>
+                                                    <div class="radio">
+                                                        <label><input type="radio" name="optradio" class="input-radio" checked>OLX</label>
+                                                      </div>
+                                                      <div class="radio">
+                                                        <label><input type="radio" name="optradio" class="input-radio">Online</label>
+                                                      </div>
+                                                      <div class="radio disabled">
+                                                        <label><input type="radio" name="optradio" class="input-radio">Broker</label>
+                                                      </div>
+                                                      <div class="radio disabled">
+                                                        <label><input type="radio" name="optradio" class="input-radio">Friend</label>
+                                                      </div>
+                                                      <div class="radio disabled">
+                                                        <label><input type="radio" name="optradio" class="input-radio">Others</label>
+                                                      </div>
+                                                </form>
+                                            </div>
+                                            <!-- /input-group -->
+                                        </div>
+                                        <!-- /.col-lg-6 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel checkout-step">
+                            <div role="tab" id="headingTwo"> <span class="checkout-step-number">2</span>
+                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" > Personal Details </a> </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="checkout-step-body">
+                                    <div class="checout-address-step">
+                                        <div class="row">
+                                            <form class="">
+                                                <!-- Multiple Radios (inline) -->
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                        <label class="control-label" for="name">Name</label>
+                                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-md-12 control-label" for="flat">Mobile</label>
+                                                    <div class="col-md-12">
+                                                        <input id="flat" name="flat" type="text" placeholder="Enter your mobile number" class="form-control input-md" required="">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-md-12 control-label" for="street">Street / Society / Office Name</label>
+                                                    <div class="col-md-12">
+                                                        <input id="street" name="street" type="text" placeholder="Street Address" class="form-control input-md">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="form-group">
+                                                    <label class="col-md-12 control-label" for="Locality">Location</label>
+                                                    <div class="col-md-12">
+                                                        <input id="Locality" name="Locality" type="text" placeholder="Mumbai" class="form-control input-md" required="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Next </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel checkout-step">
+                            <div role="tab" id="headingThree"> <span class="checkout-step-number">3</span>
+                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"  > Vehicle Details </a> </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="checkout-step-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-md-12 control-label" for="time">Select Type</label>
+                                            <div class="col-md-12">
+                                                <div class="radio">
+                                                    <label for="time-0">
+                                                        <input type="radio" name="time" id="time-0" value="8:00 - 9:00" checked="checked"> New </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label for="time-1">
+                                                        <input type="radio" name="time" id="time-1" value="10:00 - 11:00"> Used </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <select>
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="saab">Saab</option>
+                                                    <option value="mercedes">Mercedes</option>
+                                                    <option value="audi">Audi</option>
+                                                  </select>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> Next </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel checkout-step">
+                            <div role="tab" id="headingFour"> <span class="checkout-step-number">4</span>
+                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"  > Payment </a> </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="checkout-step-body">
+                                    Payment Mode
+                                    <a href="#" class="btn btn-default">Proccess to payment</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel checkout-step">
+                            <div role="tab" id="headingFour"> <span class="checkout-step-number">5</span>
+                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"  > Others </a> </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="checkout-step-body">
+                                    Payment Mode
+                                    <a href="#" class="btn btn-default">Proccess to payment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	</div>
