@@ -19,7 +19,9 @@ export class EnquiryComponent implements OnInit {
       },
       vehicleDetails: {},
       paymentDetails: {},
-      exchangeDetails: {},
+      exchangeDetails: {
+        exchangeVehicle: 'yes'
+      },
       otherDetails: {}
     }
   }
