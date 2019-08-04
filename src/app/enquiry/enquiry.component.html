@@ -1,141 +1,534 @@
 <div class="row">
-	<div class="col-md-12">
-                    <div id="accordion" class="checkout">
-                        <div class="panel checkout-step">
-                            <div> <span class="checkout-step-number">1</span>
-                                <h4 class="checkout-step-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" > Source</a></h4>
-                            </div>
-                            <div id="collapseOne" class="collapse in">
-                                <div class="checkout-step-body">
-                                    <p>Select the source</p>
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <div class="checkout-login">
-                                                <form>
-                                                    <div class="radio">
-                                                        <label><input type="radio" name="optradio" class="input-radio" checked>OLX</label>
-                                                      </div>
-                                                      <div class="radio">
-                                                        <label><input type="radio" name="optradio" class="input-radio">Online</label>
-                                                      </div>
-                                                      <div class="radio disabled">
-                                                        <label><input type="radio" name="optradio" class="input-radio">Broker</label>
-                                                      </div>
-                                                      <div class="radio disabled">
-                                                        <label><input type="radio" name="optradio" class="input-radio">Friend</label>
-                                                      </div>
-                                                      <div class="radio disabled">
-                                                        <label><input type="radio" name="optradio" class="input-radio">Others</label>
-                                                      </div>
-                                                </form>
+    <div class="col-md-12">
+        <div id="accordion" class="checkout">
+            <div class="panel checkout-step">
+                <div> <span class="checkout-step-number">1</span>
+                    <h4 class="checkout-step-title"> <a role="button" data-toggle="collapse" data-parent="#accordion"
+                            href="#collapseOne"> Source</a></h4>
+                </div>
+                <div id="collapseOne" class="collapse in show">
+                    <div class="checkout-step-body">
+                        <p>Select the source</p>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="checkout-login">
+                                    <form #sourceFrm="ngForm">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="type" id="exampleRadios1"
+                                                value="olx" [(ngModel)]="ModelData.source.type">
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                OLX
+                                            </label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="type" id="online"
+                                                    value="online" [(ngModel)]="ModelData.source.type">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                    Online
+                                                </label>
                                             </div>
-                                            <!-- /input-group -->
-                                        </div>
-                                        <!-- /.col-lg-6 -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel checkout-step">
-                            <div role="tab" id="headingTwo"> <span class="checkout-step-number">2</span>
-                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" > Personal Details </a> </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="checkout-step-body">
-                                    <div class="checout-address-step">
-                                        <div class="row">
-                                            <form class="">
-                                                <!-- Multiple Radios (inline) -->
-                                                <!-- Text input-->
-                                                <div class="form-group">
-                                                    <div class="col-md-12">
-                                                        <label class="control-label" for="name">Name</label>
-                                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input-->
-                                                <div class="form-group">
-                                                    <label class="col-md-12 control-label" for="flat">Mobile</label>
-                                                    <div class="col-md-12">
-                                                        <input id="flat" name="flat" type="text" placeholder="Enter your mobile number" class="form-control input-md" required="">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input-->
-                                                <div class="form-group">
-                                                    <label class="col-md-12 control-label" for="street">Street / Society / Office Name</label>
-                                                    <div class="col-md-12">
-                                                        <input id="street" name="street" type="text" placeholder="Street Address" class="form-control input-md">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input-->
-                                                <div class="form-group">
-                                                    <label class="col-md-12 control-label" for="Locality">Location</label>
-                                                    <div class="col-md-12">
-                                                        <input id="Locality" name="Locality" type="text" placeholder="Mumbai" class="form-control input-md" required="">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Next </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel checkout-step">
-                            <div role="tab" id="headingThree"> <span class="checkout-step-number">3</span>
-                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"  > Vehicle Details </a> </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="checkout-step-body">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label class="col-md-12 control-label" for="time">Select Type</label>
-                                            <div class="col-md-12">
-                                                <div class="radio">
-                                                    <label for="time-0">
-                                                        <input type="radio" name="time" id="time-0" value="8:00 - 9:00" checked="checked"> New </label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label for="time-1">
-                                                        <input type="radio" name="time" id="time-1" value="10:00 - 11:00"> Used </label>
-                                                </div>
+                                            <div class="form-check col" *ngIf="ModelData.source.type ==='online'">
+                                                <select class="form-control form-control-md" name="value" [(ngModel)]="ModelData.source.value">
+                                                    <option>OLX</option>
+                                                    <option>Car Trade</option>
+                                                    <option>Car Wale</option>
+                                                    <option>Facebook</option>
+                                                    <option>Instagram</option>
+                                                </select>
                                             </div>
-                                            <div>
-                                                <select>
-                                                    <option value="volvo">Volvo</option>
-                                                    <option value="saab">Saab</option>
-                                                    <option value="mercedes">Mercedes</option>
-                                                    <option value="audi">Audi</option>
-                                                  </select>
-                                              </div>
                                         </div>
-                                    </div>
-                                    <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> Next </a>
+                                        <div class="form-row">
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="type" id="broker"
+                                                    value="broker" [(ngModel)]="ModelData.source.type">
+                                                <label class="form-check-label" for="broker">
+                                                    Broker
+                                                </label>
+                                            </div>
+                                            <div class="form-check col" *ngIf="ModelData.source.type ==='broker'">
+                                                <input type="text" class="form-control" placeholder="Name" name="value"
+                                                    [(ngModel)]="ModelData.source.value">
+                                            </div>
+                                        </div>
+
+                                        <div class="
+                                                    form-check">
+                                            <input class="form-check-input" type="radio" name="type" id="friends" value="friend"
+                                                [(ngModel)]="ModelData.source.type">
+                                            <label class="form-check-label" for="friends">
+                                                Friend
+                                            </label>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="type" id="others"
+                                                    value="others" [(ngModel)]="ModelData.source.type">
+                                                <label class="form-check-label" for="others">
+                                                    Others
+                                                </label>
+                                            </div>
+                                            <div class="form-check col" *ngIf="ModelData.source.type ==='others'">
+                                                <input type="text" class="form-control" name="value" placeholder="Name"
+                                                    [(ngModel)]="ModelData.source.value">
+                                            </div>
+                                        </div>
+                                        <div class="
+                                                    form-row btn-align">
+                                            <div class="form-check col">
+                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                    href="#collapseTwo"> <button type="button" class="btn btn-primary"
+                                                        [disabled]="ModelData.source.type !== 'olx'" data-toggle="collapse">Continue</button></a>
+                                            </div>
+                                            <div class="form-check col">
+                                                <button type="button" class="btn btn-secondary">Reset</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
+                                <!-- /input-group -->
                             </div>
-                        </div>
-                        <div class="panel checkout-step">
-                            <div role="tab" id="headingFour"> <span class="checkout-step-number">4</span>
-                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"  > Payment </a> </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="checkout-step-body">
-                                    Payment Mode
-                                    <a href="#" class="btn btn-default">Proccess to payment</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel checkout-step">
-                            <div role="tab" id="headingFour"> <span class="checkout-step-number">5</span>
-                                <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"  > Others </a> </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="checkout-step-body">
-                                    Payment Mode
-                                    <a href="#" class="btn btn-default">Proccess to payment</a>
-                                </div>
-                            </div>
+                            <!-- /.col-lg-6 -->
                         </div>
                     </div>
                 </div>
-	</div>
+            </div>
+            <div class="panel checkout-step">
+                <div role="tab" id="headingTwo"> <span class="checkout-step-number">2</span>
+                    <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseTwo"> Personal Details </a> </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="checkout-step-body">
+                        <div class="checout-address-step">
+                            <div class="row">
+                                <form #personalFrm="ngForm" class="">
+                                    <!-- Multiple Radios (inline) -->
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Name</label>
+                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md"
+                                            [(ngModel)]="ModelData.personalDetails.name" required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Mobile</label>
+                                        <input id="name" name="mobile" type="text" placeholder="Mobile number" class="form-control input-md"
+                                            [(ngModel)]="ModelData.personalDetails.mobile" required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Mobile 1</label>
+                                        <input id="name" name="name" type="text" placeholder="Mobile Number" class="form-control input-md"
+                                            required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Landline</label>
+                                        <input id="name" name="name" type="text" placeholder="Landline number" class="form-control input-md"
+                                            required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Email</label>
+                                        <input id="name" name="name" type="text" placeholder="Email" class="form-control input-md"
+                                            required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Address</label>
+                                        <textarea id="name" name="name" type="text-area" placeholder="Address" class="form-control input-md"
+                                            required=""></textarea>
+                                    </div>
+
+
+                                    <div class="form-row btn-align">
+                                        <div class="form-check form-personal col">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapseThree"> <button type="button" class="btn btn-primary">Continue</button></a>
+                                        </div>
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                            href="#collapseThree"> Next </a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="panel checkout-step">
+                <div role="tab" id="headingThree"> <span class="checkout-step-number">3</span>
+                    <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseThree"> Vehicle Details </a> </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="checkout-step-body">
+                        <div class="checout-address-step">
+                            <div class="row">
+                                <form class="">
+                                    <!-- Multiple Radios (inline) -->
+                                    <div class="form-row">
+                                        <div class="form-check col">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Vehicle Type
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="vehicleType" id="new_vehicle"
+                                                value="new_vehicle" [(ngModel)]="ModelData">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                New
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="vehicleType" id="used_vehicle"
+                                                value="used_vehicle" [(ngModel)]="ModelData">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Used
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Make</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Maruti</option>
+                                            <option>Car Trade</option>
+                                            <option>Car Wale</option>
+                                            <option>Facebook</option>
+                                            <option>Instagram</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Model</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Maruti</option>
+                                            <option>Car Trade</option>
+                                            <option>Car Wale</option>
+                                            <option>Facebook</option>
+                                            <option>Instagram</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Variant</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Maruti</option>
+                                            <option>Car Trade</option>
+                                            <option>Car Wale</option>
+                                            <option>Facebook</option>
+                                            <option>Instagram</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Fuel</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Petrol</option>
+                                            <option>Diesel</option>
+                                            <option>Hybrid</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Budget</label>
+                                        <input id="name" name="name" type="text" placeholder="Budget" class="form-control input-md"
+                                            required="">
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Year</label>
+                                        <input id="year1" name="name" type="text" placeholder="Year" class="date form-control input-md"
+                                            required="">
+                                    </div>
+
+
+                                    <div class="form-row btn-align">
+                                        <div class="form-check form-personal col">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapseFour"> <button type="button" class="btn btn-primary">Continue</button></a>
+                                        </div>
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseThree"> Next </a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="panel checkout-step">
+                <div role="tab" id="headingFour"> <span class="checkout-step-number">4</span>
+                    <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseFour"> Payment </a> </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="checkout-step-body">
+                        <div class="checout-address-step">
+                            <div class="row">
+                                <form class="">
+                                    <!-- Multiple Radios (inline) -->
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Payment</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Outright</option>
+                                            <option>Loan</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Payment Type</label>
+                                        <select class="form-control form-control-md">
+                                            <option>LTV</option>
+                                            <option>DP</option>
+                                        </select>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Payment Details</label>
+                                        <textarea id="name" name="name" type="text-area" placeholder="Payment Details"
+                                            class="form-control input-md" required=""></textarea>
+                                    </div>
+
+
+                                    <div class="form-row btn-align">
+                                        <div class="form-check form-personal col">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapseFive"> <button type="button" class="btn btn-primary">Continue</button></a>
+                                        </div>
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseThree"> Next </a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="panel checkout-step">
+                <div role="tab" id="headingFour"> <span class="checkout-step-number">5</span>
+                    <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseFive"> Exchange Vehicle Details</a> </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="checkout-step-body">
+                        <div class="checout-address-step">
+                            <div class="row">
+                                <form class="">
+                                    <!-- Multiple Radios (inline) -->
+                                    <div class="form-row">
+                                        <div class="form-check col">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Exchange Vehicle
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="exchangeVehicle" id="new_vehicle"
+                                                value="yes" [(ngModel)]="ModelData" checked>
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="exchangeVehicle" id="used_vehicle"
+                                                value="no" [(ngModel)]="ModelData">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div *ngIf="ModelData ==='yes'">
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Make</label>
+                                            <select class="form-control form-control-md">
+                                                <option>Maruti</option>
+                                                <option>Car Trade</option>
+                                                <option>Car Wale</option>
+                                                <option>Facebook</option>
+                                                <option>Instagram</option>
+                                            </select>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Model</label>
+                                            <select class="form-control form-control-md">
+                                                <option>Maruti</option>
+                                                <option>Car Trade</option>
+                                                <option>Car Wale</option>
+                                                <option>Facebook</option>
+                                                <option>Instagram</option>
+                                            </select>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Variant</label>
+                                            <select class="form-control form-control-md">
+                                                <option>Maruti</option>
+                                                <option>Car Trade</option>
+                                                <option>Car Wale</option>
+                                                <option>Facebook</option>
+                                                <option>Instagram</option>
+                                            </select>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Fuel</label>
+                                            <select class="form-control form-control-md">
+                                                <option>Petrol</option>
+                                                <option>Diesel</option>
+                                                <option>Hybrid</option>
+                                            </select>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Expected Price</label>
+                                            <input id="name" name="name" type="text" placeholder="Expected Price" class="form-control input-md"
+                                                required="">
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Mileage</label>
+                                            <input id="mileage" name="name" type="text" placeholder="Mileage" class="form-control input-md"
+                                                required="">
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Year</label>
+                                            <input id="year" name="name" type="text" placeholder="Year" class="date form-control input-md"
+                                                required="">
+                                        </div>
+                                        <div class="form-check form-personal">
+                                            <label class="control-label" for="name">Comments</label>
+                                            <textarea id="name" name="name" type="text" placeholder="Comments" class="form-control input-md"
+                                                required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-row btn-align">
+                                        <div class="form-check form-personal col">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapseSix"> <button type="button" class="btn btn-primary">Continue</button></a>
+                                        </div>
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseThree"> Next </a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="panel checkout-step">
+                <div role="tab" id="headingFour"> <span class="checkout-step-number">6</span>
+                    <h4 class="checkout-step-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseSix"> Other Details </a> </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="checkout-step-body">
+                        <div class="checout-address-step">
+                            <div class="row">
+                                <form class="">
+                                    <!-- Multiple Radios (inline) -->
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Closing</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Hot</option>
+                                            <option>Warm</option>
+                                            <option>Cold</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Lead History</label>
+                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
+                                            required="">
+                                    </div>
+
+                                    <div class="form-row form-personal">
+                                        <div class="form-check col">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Customer Visited
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="exchangeVehicle" id="new_vehicle"
+                                                value="yes" [(ngModel)]="ModelData" checked>
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check col">
+                                            <input class="form-check-input" type="radio" name="exchangeVehicle" id="used_vehicle"
+                                                value="no" [(ngModel)]="ModelData">
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Customer Visited Date</label>
+                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
+                                            required="">
+                                    </div>
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Followup Date</label>
+                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
+                                            required="">
+                                        <!-- <ul>
+                                            <li>01/02/2019</li>
+                                            <li>01/02/2019</li>
+                                            <li>01/02/2019</li>
+                                            <li>01/02/2019</li>
+                                        </ul> -->
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-check form-personal">
+                                        <label class="control-label" for="name">Lead Status</label>
+                                        <select class="form-control form-control-md">
+                                            <option>Closed</option>
+                                            <option>Not Interested</option>
+                                            <option>Purchased from somewhere else</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-row btn-align">
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-primary">Continue</button>
+                                        </div>
+                                        <div class="form-check form-personal col">
+                                            <button type="button" class="btn btn-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <a class="collapsed btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                                            href="#collapseThree"> Next </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-check form-personal col">
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+            <!-- <div class="form-check form-personal col">
+                <button type="button" class="btn btn-secondary">Reset</button>
+            </div> -->
+        </div>
+    </div>
+</div>
