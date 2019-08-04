@@ -119,26 +119,27 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Mobile 1</label>
-                                        <input id="name" name="name" type="text" placeholder="Mobile Number" class="form-control input-md"
-                                            required="">
+                                        <input id="name" name="mobile1" type="text" placeholder="Mobile Number" class="form-control input-md"
+                                            [(ngModel)]="ModelData.personalDetails.mobile1" required="">
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Landline</label>
-                                        <input id="name" name="name" type="text" placeholder="Landline number" class="form-control input-md"
+                                        <input id="name" name="landline" type="text" placeholder="Landline number"
+                                            class="form-control input-md" [(ngModel)]="ModelData.personalDetails.landline"
                                             required="">
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Email</label>
-                                        <input id="name" name="name" type="text" placeholder="Email" class="form-control input-md"
-                                            required="">
+                                        <input id="name" name="email" type="email" placeholder="Email" class="form-control input-md"
+                                            [(ngModel)]="ModelData.personalDetails.email" required="">
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Address</label>
-                                        <textarea id="name" name="name" type="text-area" placeholder="Address" class="form-control input-md"
-                                            required=""></textarea>
+                                        <textarea id="name" name="address" type="text" placeholder="Address" class="form-control input-md"
+                                            [(ngModel)]="ModelData.personalDetails.address" required=""></textarea>
                                     </div>
 
 
@@ -168,7 +169,7 @@
                     <div class="checkout-step-body">
                         <div class="checout-address-step">
                             <div class="row">
-                                <form class="">
+                                <form #vehicleFrm="ngForm" class="">
                                     <!-- Multiple Radios (inline) -->
                                     <div class="form-row">
                                         <div class="form-check col">
@@ -178,14 +179,14 @@
                                         </div>
                                         <div class="form-check col">
                                             <input class="form-check-input" type="radio" name="vehicleType" id="new_vehicle"
-                                                value="new_vehicle" [(ngModel)]="ModelData">
+                                                value="new_vehicle" [(ngModel)]="ModelData.vehicleDetails.vehicleType">
                                             <label class="form-check-label" for="exampleRadios2">
                                                 New
                                             </label>
                                         </div>
                                         <div class="form-check col">
                                             <input class="form-check-input" type="radio" name="vehicleType" id="used_vehicle"
-                                                value="used_vehicle" [(ngModel)]="ModelData">
+                                                value="used_vehicle" [(ngModel)]="ModelData.vehicleDetails.vehicleType">
                                             <label class="form-check-label" for="exampleRadios2">
                                                 Used
                                             </label>
@@ -194,7 +195,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Make</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="make" [(ngModel)]="ModelData.vehicleDetails.make">
                                             <option>Maruti</option>
                                             <option>Car Trade</option>
                                             <option>Car Wale</option>
@@ -205,7 +206,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Model</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="model" [(ngModel)]="ModelData.vehicleDetails.model">
                                             <option>Maruti</option>
                                             <option>Car Trade</option>
                                             <option>Car Wale</option>
@@ -216,7 +217,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Variant</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="variant" [(ngModel)]="ModelData.vehicleDetails.variant">
                                             <option>Maruti</option>
                                             <option>Car Trade</option>
                                             <option>Car Wale</option>
@@ -227,7 +228,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Fuel</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="fuel" [(ngModel)]="ModelData.vehicleDetails.fuel">
                                             <option>Petrol</option>
                                             <option>Diesel</option>
                                             <option>Hybrid</option>
@@ -236,14 +237,14 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Budget</label>
-                                        <input id="name" name="name" type="text" placeholder="Budget" class="form-control input-md"
-                                            required="">
+                                        <input id="name" name="budget" type="text" placeholder="Budget" class="form-control input-md"
+                                            [(ngModel)]="ModelData.vehicleDetails.budget" required="">
                                     </div>
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Year</label>
-                                        <input id="year1" name="name" type="text" placeholder="Year" class="date form-control input-md"
-                                            required="">
+                                        <input id="year1" name="year" type="text" placeholder="Year" class="form-control input-md"
+                                            [(ngModel)]="ModelData.vehicleDetails.year" required="">
                                     </div>
 
 
@@ -273,12 +274,12 @@
                     <div class="checkout-step-body">
                         <div class="checout-address-step">
                             <div class="row">
-                                <form class="">
+                                <form #paymentFrm="ngForm" class="">
                                     <!-- Multiple Radios (inline) -->
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Payment</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="payment" [(ngModel)]="ModelData.paymentDetails.payment">
                                             <option>Outright</option>
                                             <option>Loan</option>
                                         </select>
@@ -286,7 +287,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Payment Type</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="paymentType" [(ngModel)]="ModelData.paymentDetails.paymentType">
                                             <option>LTV</option>
                                             <option>DP</option>
                                         </select>
@@ -294,8 +295,9 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Payment Details</label>
-                                        <textarea id="name" name="name" type="text-area" placeholder="Payment Details"
-                                            class="form-control input-md" required=""></textarea>
+                                        <textarea id="name" name="paymentDetails" type="text-area" placeholder="Payment Details"
+                                            class="form-control input-md" [(ngModel)]="ModelData.paymentDetails.paymentDetails"
+                                            required=""></textarea>
                                     </div>
 
 
@@ -325,7 +327,7 @@
                     <div class="checkout-step-body">
                         <div class="checout-address-step">
                             <div class="row">
-                                <form class="">
+                                <form #exchangeFrm="ngForm" class="">
                                     <!-- Multiple Radios (inline) -->
                                     <div class="form-row">
                                         <div class="form-check col">
@@ -353,7 +355,7 @@
                                     <div *ngIf="ModelData.exchangeDetails.exchangeVehicle ==='yes'">
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Make</label>
-                                            <select class="form-control form-control-md">
+                                            <select class="form-control form-control-md" name="make" [(ngModel)]="ModelData.exchangeDetails.make">
                                                 <option>Maruti</option>
                                                 <option>Car Trade</option>
                                                 <option>Car Wale</option>
@@ -364,7 +366,7 @@
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Model</label>
-                                            <select class="form-control form-control-md">
+                                            <select class="form-control form-control-md" name="model" [(ngModel)]="ModelData.exchangeDetails.model">
                                                 <option>Maruti</option>
                                                 <option>Car Trade</option>
                                                 <option>Car Wale</option>
@@ -375,7 +377,7 @@
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Variant</label>
-                                            <select class="form-control form-control-md">
+                                            <select class="form-control form-control-md" name="variant" [(ngModel)]="ModelData.exchangeDetails.variant">
                                                 <option>Maruti</option>
                                                 <option>Car Trade</option>
                                                 <option>Car Wale</option>
@@ -386,7 +388,7 @@
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Fuel</label>
-                                            <select class="form-control form-control-md">
+                                            <select class="form-control form-control-md" name="fuel" [(ngModel)]="ModelData.exchangeDetails.fuel">
                                                 <option>Petrol</option>
                                                 <option>Diesel</option>
                                                 <option>Hybrid</option>
@@ -395,24 +397,26 @@
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Expected Price</label>
-                                            <input id="name" name="name" type="text" placeholder="Expected Price" class="form-control input-md"
+                                            <input id="name" name="expectedprice" type="text" placeholder="Expected Price"
+                                                class="form-control input-md" [(ngModel)]="ModelData.exchangeDetails.expectedprice"
                                                 required="">
                                         </div>
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Mileage</label>
-                                            <input id="mileage" name="name" type="text" placeholder="Mileage" class="form-control input-md"
-                                                required="">
+                                            <input id="mileage" name="mileage" type="text" placeholder="Mileage" class="form-control input-md"
+                                                [(ngModel)]="ModelData.exchangeDetails.mileage" required="">
                                         </div>
                                         <!-- Text input-->
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Year</label>
-                                            <input id="year" name="name" type="text" placeholder="Year" class="date form-control input-md"
-                                                required="">
+                                            <input id="year" name="year" type="text" placeholder="Year" class="form-control input-md"
+                                                [(ngModel)]="ModelData.exchangeDetails.year" required="">
                                         </div>
                                         <div class="form-check form-personal">
                                             <label class="control-label" for="name">Comments</label>
-                                            <textarea id="name" name="name" type="text" placeholder="Comments" class="form-control input-md"
+                                            <textarea id="name" name="comments" type="text" placeholder="Comments"
+                                                class="form-control input-md" [(ngModel)]="ModelData.exchangeDetails.comments"
                                                 required=""></textarea>
                                         </div>
                                     </div>
@@ -442,12 +446,12 @@
                     <div class="checkout-step-body">
                         <div class="checout-address-step">
                             <div class="row">
-                                <form class="">
+                                <form #otherFrm="ngForm" class="">
                                     <!-- Multiple Radios (inline) -->
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Closing</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="closing" [(ngModel)]="ModelData.otherDetails.closing">
                                             <option>Hot</option>
                                             <option>Warm</option>
                                             <option>Cold</option>
@@ -455,8 +459,8 @@
                                     </div>
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Lead History</label>
-                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
-                                            required="">
+                                        <input id="year" name="leadHistory" type="date" placeholder="Year" class="form-control input-md"
+                                            [(ngModel)]="ModelData.otherDetails.leadHistory" required="">
                                     </div>
 
                                     <div class="form-row form-personal">
@@ -466,30 +470,32 @@
                                             </label>
                                         </div>
                                         <div class="form-check col">
-                                            <input class="form-check-input" type="radio" name="exchangeVehicle" id="new_vehicle"
-                                                value="yes" [(ngModel)]="ModelData" checked>
+                                            <input class="form-check-input" type="radio" name="customerVisited" id="new_vehicle"
+                                                value="yes" [(ngModel)]="ModelData.otherDetails.customerVisited"
+                                                checked>
                                             <label class="form-check-label" for="exampleRadios2">
                                                 Yes
                                             </label>
                                         </div>
                                         <div class="form-check col">
                                             <input class="form-check-input" type="radio" name="exchangeVehicle" id="used_vehicle"
-                                                value="no" [(ngModel)]="ModelData">
+                                                value="no" [(ngModel)]="ModelData.otherDetails.customerVisited">
                                             <label class="form-check-label" for="exampleRadios2">
                                                 No
                                             </label>
                                         </div>
                                     </div>
 
-                                    <div class="form-check form-personal">
+                                    <div class="form-check form-personal" *ngIf="ModelData.otherDetails.customerVisited==='yes'">
                                         <label class="control-label" for="name">Customer Visited Date</label>
-                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
+                                        <input id="year" name="customerVisitedDate" type="date" placeholder="Year"
+                                            class="form-control input-md" [(ngModel)]="ModelData.otherDetails.customerVisitedDate"
                                             required="">
                                     </div>
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Followup Date</label>
-                                        <input id="year" name="name" type="date" placeholder="Year" class="form-control input-md"
-                                            required="">
+                                        <textarea id="year" name="followUpDate" type="text" placeholder="Year" class="form-control input-md"
+                                            [(ngModel)]="ModelData.otherDetails.followUpDate" required=""></textarea>
                                         <!-- <ul>
                                             <li>01/02/2019</li>
                                             <li>01/02/2019</li>
@@ -500,7 +506,7 @@
                                     <!-- Text input-->
                                     <div class="form-check form-personal">
                                         <label class="control-label" for="name">Lead Status</label>
-                                        <select class="form-control form-control-md">
+                                        <select class="form-control form-control-md" name="leadStatus" [(ngModel)]="ModelData.otherDetails.leadStatus">
                                             <option>Closed</option>
                                             <option>Not Interested</option>
                                             <option>Purchased from somewhere else</option>
@@ -525,7 +531,7 @@
         </div>
         <div class="form-row">
             <div class="form-check form-personal col">
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary" (click)="saveEnquiry($event)">Save</button>
             </div>
             <!-- <div class="form-check form-personal col">
                 <button type="button" class="btn btn-secondary">Reset</button>

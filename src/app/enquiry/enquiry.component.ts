@@ -15,12 +15,37 @@ export class EnquiryComponent implements OnInit {
       },
       personalDetails: {
         name: '',
-        mobile: ''
+        mobile: '',
+        mobile1: '',
+        landline: '',
+        email: '',
+        address: ''
       },
-      vehicleDetails: {},
-      paymentDetails: {},
+      vehicleDetails: {
+        vehicleType: '',
+        make: '',
+        model: '',
+        variant: '',
+        fuel: '',
+        budget: '',
+        year: '',
+      },
+      paymentDetails: {
+        payment: '',
+        paymentType: '',
+        paymentDetails: ''
+      },
       exchangeDetails: {
-        exchangeVehicle: 'yes'
+        exchangeVehicle: 'yes',
+        make: '',
+        model: '',
+        variant: '',
+        fuel: '',
+        expectedprice: '',
+        mileage: '',
+        year: '',
+        comments: ''
+
       },
       otherDetails: {}
     }
@@ -34,6 +59,10 @@ export class EnquiryComponent implements OnInit {
         minViewMode: "years"
       });
     });
+  }
+
+  public saveEnquiry() {
+    console.log("data", JSON.stringify(this.ModelData));
   }
 
 }
